@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        div {
+            border: 1px solid;
+            background-color: red;
+            margin: 2px 0 2px 0;
+        }
+    </style>
+
+    <script>
+        // $(document).ready(function () {});
+        $(function(){
+            //After
+            $('#div1').after('<div style="background-color:yellow"> After div </div>');
+
+            //Before
+            $('#div1').before('<div style="background-color:yellow"> Before div </div>');
+
+            //Append
+            $('#div1').append(' Appended text!');
+
+            //Remove
+            $('#div2').remove();
+
+            //Replace All
+            $('<span>This is a span replacing p</span>').replaceAll('p');
+
+            //Wrap
+            $('span').wrap('<p></p>');
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h3>Demo: JQuery methods demo </h3>
+    <div id="div1">div 1</div>
+    <div id="div2">div 2</div>
+    <p>Text after this is</p>
+</body>
+
+</html>
