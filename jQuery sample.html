@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Sample Code</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1>jQuery Sample Code</h1>
+
+  <button id="clickButton">Click Me</button>
+  <div id="output"></div>
+
+  <script>
+    // Document ready function
+    $(document).ready(function() {
+      // Click event handler
+      $('#clickButton').click(function() {
+        // Hide and show methods
+        $('#output').hide().html('Button Clicked!').show();
+
+        // CSS method
+        $('#output').css({
+          'background-color': 'yellow',
+          'color': 'blue',
+          'font-size': '24px'
+        });
+
+        // Add class method
+        $('#output').addClass('highlight');
+
+        // Append and prepend methods
+        $('#output').append(' Appended Text ');
+        $('#output').prepend(' Prepended Text ');
+
+        // Fade out and fade in methods
+        $('#output').fadeOut(2000, function() {
+          $(this).fadeIn(2000);
+        });
+
+        // Slide up and slide down methods
+        $('#output').slideUp(1000, function() {
+          $(this).slideDown(1000);
+        });
+
+        // Each method
+        $('div').each(function(index) {
+          console.log('Element at index ' + index + ': ' + $(this).attr('id'));
+        });
+
+        // AJAX method
+        $.ajax({
+          url: 'https://api.example.com/data',
+          method: 'GET',
+          success: function(response) {
+            console.log('AJAX success:', response);
+          },
+          error: function(xhr, status, error) {
+            console.log('AJAX error:', error);
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .highlight {
+      font-weight: bold;
+    }
+  </style>
+
+</body>
+</html>
