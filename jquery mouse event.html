@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        <script>
+            $(document).ready(function () {
+
+                //Click
+                $('#myDiv1').click(function (eventObj) {
+                    alert('CLICKED!!');
+                });
+
+                //Mouse Enter
+                $('#myDiv1').mouseenter(function (data) {
+                    $(this).css('background-color', 'green');
+                    $(this).append('<span>Mouse Entered</span>');
+                });
+
+                //Mouse Leave
+                $('#myDiv1').mouseleave(function (data) {
+                    $(this).css('background-color', 'red');
+                    $('span').remove();
+                });
+
+                //Hover
+                $('#myDiv2').hover(function (data) {
+                    $(this).css('background-color', 'green');
+                    $(this).append('<span>Hovered</span>');
+                }, function (data) {
+                    $(this).css('background-color', 'red');
+                    $('span').remove();
+                });
+
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>Demo: jQuery click,mouseenter() , mouseleave() & hover methods </h1>
+
+        <div id="myDiv1" style="width:100px;height:100px;background-color:red;">
+            <h5>CLICK ME</h5>
+        </div>
+        <div id="myDiv2" style="width:100px;height:100px;background-color:red;margin-top:100px"></div>
+    </body>
+
+</html>
